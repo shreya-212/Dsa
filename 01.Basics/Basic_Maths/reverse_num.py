@@ -7,6 +7,5 @@ class Solution:
             rev=(rev*10)+dig
             n//=10
         return rev
-s=Solution()
-print(s.reverseNumber(253))
+
 

@@ -6,6 +6,5 @@ class Solution:
             if n%i==0:
                 return False
         return True
-s=Solution()
-print(s.isPrime(6))
+
  

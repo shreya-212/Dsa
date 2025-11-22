@@ -8,5 +8,4 @@ class Solution:
             count+=1
             n//=10
         return count
-s=Solution()
-print(s.countDigit(14))
+
