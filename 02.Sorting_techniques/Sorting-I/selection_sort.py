@@ -2,7 +2,7 @@
 # return the sorted array.
 
 class Solution:
-    def selectionSort( nums):
+    def selectionSort(self,nums):
         n=len(nums)
         for i in range(0,n-1):
             curr_min=i
