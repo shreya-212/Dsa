@@ -15,22 +15,29 @@ class Solution:
 
             
 
-#Better Solution -Time complexity:O(n),space complexity:O(n)
+#Better Solution -Time complexity:O(n),space complexity:O(1)
 
 class Solution:
     def missingNumber(self, nums):
-        nums_set=set(nums)
         n=len(nums)
-        for i in range(n+1):
-            if i not in nums_set:
-                return i
+        return n*(n+1)//2-sum(nums)
             
             
             
 
 #Optimal Solution - Time complexity:O(n), space complexity:O(1)
 
-class Solution:
+class Solution(object):
     def missingNumber(self, nums):
         n=len(nums)
-        return n*(n+1)//2-sum(nums)
+        i=0
+        while i<n:
+            index=nums[i]
+            if index<n and nums[i]!=nums[index]:
+                nums[i],nums[index]=nums[index],nums[i]
+            else:
+                i+=1
+        for i in range(n):
+            if nums[i]!=i:
+                return i
+        return n
