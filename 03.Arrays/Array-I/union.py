@@ -1,3 +1,7 @@
+# Given two sorted arrays nums1 and nums2, return an array that contains the union of these two arrays.
+# The elements in the union must be in ascending order.
+
+
 
 #Brute force Solution- Time complexity:O((n1+n2)log(n1+n2)), space complexity:O(n1+n2)
 class Solution:
