@@ -16,7 +16,6 @@ class Solution(object):
 
 
 
-
 #Optimal Solution  -Time complexity:O(n)  ,space complexity:O(n)
 class Solution(object):
     def rotateString(self, s, goal):
