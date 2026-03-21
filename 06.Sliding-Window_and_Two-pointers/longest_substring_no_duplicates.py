@@ -21,3 +21,19 @@ class Solution(object):
              
 
 
+
+
+
+
+#Optimal solution  -Time complexity:O(n) ,space complexity:O(n)
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        max_len=0
+        i=0
+        seen={}
+        for j in range(len(s)):
+            if s[j] in seen:
+                i=max(i,seen[s[j]]+1)
+            seen[s[j]]=j
+            max_len=max(max_len,j-i+1)
+        return max_len
