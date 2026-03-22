@@ -11,7 +11,7 @@ class Solution(object):
         for i in range(len(s)):
             check=set()
             for j in range(i,len(s)):
-                if not s[j] in check:
+                if s[j] not in check:
                     check.add(s[j])
                     length=j-i+1
                     longest=max(longest,length)
