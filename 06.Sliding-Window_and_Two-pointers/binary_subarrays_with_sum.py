@@ -18,6 +18,23 @@ class Solution(object):
 
 
 
+#Better solution  -Time complexity:O(n)  ,space complexity:O(n)
+class Solution(object):
+    def numSubarraysWithSum(self, nums, goal):
+        prefix={0:1}
+        subsum=0
+        count=0
+        for num in nums:
+            subsum+=num
+            if subsum-goal in prefix:
+                count+=prefix[subsum-goal]
+            prefix[subsum]=prefix.get(subsum,0)+1
+        return count
+
+
+
+
+
 #Optimal solution  -Time complexity:O(n)  ,space complexity:O(1)
 class Solution(object):
     def numSubarraysWithSum(self, nums, goal):
