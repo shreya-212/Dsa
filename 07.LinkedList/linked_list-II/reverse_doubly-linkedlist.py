@@ -4,8 +4,30 @@
 
 
 
+#Brute force solution  -Time complexity:O(n)  ,space complexity:O(n)
+class ListNode:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
 
-#Time complexity:O(n)  ,space complexity:O(1)
+class Solution:
+    def reverseDLL(self, head):
+        arr=[]
+        current=head
+        while current:
+            arr.append(current.data)
+            current=current.next
+        current=head
+        for value in reversed(arr):
+            current.data=value
+            current=current.next
+        return head
+
+
+
+
+#Optimal solution   -Time complexity:O(n)  ,space complexity:O(1)
 class ListNode:
     def __init__(self, data):
         self.data = data
