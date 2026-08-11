@@ -18,7 +18,7 @@ class Solution(object):
 
 
 
-#Optimal solution  -Time complexity:o(n)  ,space complexity:o(1)
+#Optimal solution  -Time complexity:O(n)  ,space complexity:O(1)
 class Solution(object):
     def detectCycle(self, head):
         slow=fast=head
