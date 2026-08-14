@@ -27,7 +27,7 @@ class Solution(object):
 
 
 
-#Optimal solution  - Time complexity:O(n)  ,space complexity:o(1)
+#Optimal solution  - Time complexity:O(n)  ,space complexity:O(1)
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
@@ -38,22 +38,26 @@ class Solution(object):
         while fast and fast.next:
             slow=slow.next
             fast=fast.next.next
-        mid=slow
+        cur=slow
         prev=None
-        current=head
-        while current!=mid:
-            nxt=current.next
-            current.next=prev
-            prev=current
-            current=nxt
-        left=prev
-        right=mid.next if fast else mid
+        while cur:
+            nxt=cur.next
+            cur.next=prev
+            prev=cur
+            cur=nxt
+        left=head
+        right=prev
         while left and right:
-            if left.val != right.val:
+            if left.val!=right.val:
                 return False
             left=left.next
             right=right.next
         return True
+
+
+
+
+
 
 
 
