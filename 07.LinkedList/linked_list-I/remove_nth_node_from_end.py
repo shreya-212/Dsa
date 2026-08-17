@@ -23,3 +23,26 @@ class Solution(object):
         
 
 
+
+#Optimal solution time complxity;O(n),space complexity:O(1)
+
+# Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+        
+class Solution(object):
+    def removeNthFromEnd(self, head, n):
+        temp=ListNode(0,head)
+        slow=fast=temp
+        for i in range(n+1):
+            fast=fast.next
+        while fast:
+            slow=slow.next
+            fast=fast.next
+        slow.next=slow.next.next
+        return temp.next
+        
+        
