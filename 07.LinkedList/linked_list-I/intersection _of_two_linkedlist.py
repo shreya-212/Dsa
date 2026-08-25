@@ -4,7 +4,8 @@
 
 
 
-#Brute force solution  -Time complexity:O(n*m)  ,space complexity:O(n)
+#Brute force solution  -Time complexity:O(n+m)  ,space complexity:O(n)
+# Definition for singly-linked list.
 class ListNode(object):
     def __init__(self, x):
         self.val = x
@@ -12,17 +13,23 @@ class ListNode(object):
 
 class Solution(object):
     def getIntersectionNode(self, headA, headB):
-        seen={}
+        check=set()
         temp1=headA
         temp2=headB
         while temp1:
-            seen[temp1]=seen.get(temp1,0)+1
+            check.add(temp1)
             temp1=temp1.next
         while temp2:
-            if temp2 in seen:
+            if temp2 in check:
                 return temp2
             temp2=temp2.next
         return None
+
+
+
+        
+        
+        
 
         
         
