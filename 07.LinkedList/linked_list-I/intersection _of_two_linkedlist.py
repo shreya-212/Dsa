@@ -5,7 +5,6 @@
 
 
 #Brute force solution  -Time complexity:O(n+m)  ,space complexity:O(n)
-# Definition for singly-linked list.
 class ListNode(object):
     def __init__(self, x):
         self.val = x
@@ -27,6 +26,30 @@ class Solution(object):
 
 
 
+
+
+
+#Optimal solution  -Time complexity:O(n+m)  ,space complexity:O(1)
+class Solution(object):
+    def getIntersectionNode(self, headA, headB):
+        if not headA or not headB:
+            return None
+        temp1=headA
+        temp2=headB
+        while temp1 != temp2:
+            temp1=temp1.next
+            temp2=temp2.next
+            if temp1==temp2:
+                return temp1
+            if not temp1:
+                temp1=headA
+            if not temp2:
+                temp2=headB
+        return temp1
+        
+
+        
+        
         
         
         
