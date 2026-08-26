@@ -42,9 +42,9 @@ class Solution(object):
             if temp1==temp2:
                 return temp1
             if not temp1:
-                temp1=headA
+                temp1=headB
             if not temp2:
-                temp2=headB
+                temp2=headA
         return temp1
         
 
