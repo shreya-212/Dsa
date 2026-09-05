@@ -3,7 +3,7 @@
 
 
 
-#Brute force solution  -Time complexity:O(n^2)  ,space complexity:O(1)
+#Brute force solution  -Time complexity:O(n^2)  ,space complexity:O(n)
 class ListNode:
     def __init__(self, val):
         self.val = val
@@ -24,3 +24,25 @@ class Solution:
             temp=temp.next
         return l
 
+
+
+
+#Optimal solution  -Time complexity:O(n)  ,space ciomplexity:O(n)
+class Solution:
+    def findPairsWithGivenSum(self, head, target):
+        left=head
+        right=head
+        while right and right.next:
+            right=right.next
+        result=[]
+        while left and right and left!=right and left.prev!=right:
+            cur_sum=left.val+right.val
+            if cur_sum==target:
+                result.append([left.val,right.val])
+                left=left.next
+                right=right.prev
+            elif cur_sum<target:
+                left=left.next
+            else:
+                right=right.prev
+        return result
